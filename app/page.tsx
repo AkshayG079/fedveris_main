@@ -6,6 +6,14 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Home() {
+
+  type FormErrors = {
+  full_name?: string;
+  email?: string;
+  message?: string;
+  terms?: string;
+};
+
   const router = useRouter();
 
   const [form, setForm] = useState({
@@ -16,10 +24,10 @@ export default function Home() {
     terms: false,
   });
 
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const validate = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {};
 
     if (!form.full_name.trim()) {
       newErrors.full_name = "Full name is required";
@@ -531,7 +539,7 @@ export default function Home() {
               Ready to Start?
             </h3>
             <p className="text-navy-dark/80 text-xs sm:text-sm font-medium mb-2 sm:mb-4">
-              Let's discuss how we can bring your project to life with our
+              Let`s discuss how we can bring your project to life with our
               expert team.
             </p>
             <button
@@ -608,7 +616,7 @@ export default function Home() {
             Ready to start your project?
           </h2>
           <p className="text-white/80 text-base sm:text-lg mb-8 max-w-xl mx-auto relative z-10">
-            Let's build something extraordinary together. Our team is ready
+            Let`s build something extraordinary together. Our team is ready
             to transform your vision into reality.
           </p>
           <div className="flex justify-center relative z-10">
@@ -670,10 +678,10 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="w-1 bg-primary dark:bg-brand-gold rounded-full flex-shrink-0"></div>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic sm:text-xs">
-                    "Fidveris took the time to understand our export
+                    Fidveris took the time to understand our export
                     business and built a website that reflects our brand
                     properly. The team was responsive, professional and easy
-                    to work with. We’re very satisfied with the outcome."
+                    to work with. We’re very satisfied with the outcome.
                   </p>
                 </div>
               </div>
@@ -691,7 +699,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-md">
                 Everything you need to know about working with FIDVERIS. If
-                you can't find the answer you're looking for, please reach
+                you can`t find the answer you`re looking for, please reach
                 out.
               </p>
             </div>
@@ -784,7 +792,7 @@ export default function Home() {
                 Send us a Message
               </h3>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                We'll get back to you within 24 business hours.
+                We`ll get back to you within 24 business hours.
               </p>
               <form onSubmit={handleSubmit} className="space-y-6" method="POST">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

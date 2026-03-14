@@ -33,8 +33,6 @@ const Header = () => {
     { href: '/process', label: 'Process' },
     { href: '/about', label: 'About' },
   ]
-  console.log("pathname",pathname)
-
   return (
     <header className="fixed top-0 z-50 w-full bg-primary-bg/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-360 items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4">
